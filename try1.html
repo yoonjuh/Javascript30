@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <link rel="stylesheet" href="style1.css">
+    </head>
+
+    <body>
+        <div class="keys">
+            <div data-key="65" class="key">
+                <kbd>A</kbd>
+                <span class="sound">clap</span>
+            </div>
+            <div data-key="83" class="key">
+                <kbd>S</kbd>
+                <span class="sound">hihat </span>
+            </div>
+            <div data-key="68" class="key">
+                <kbd>D</kbd>
+                <span class="sound">kick</span>
+            </div>
+            <div data-key="70" class="key">
+                <kbd>F</kbd>
+                <span class="sound">openhat</span>
+            </div>
+            <div data-key="71" class="key">
+                <kbd>G</kbd>
+                <span class="sound">boom</span>
+            </div>
+            <div data-key="72" class="key">
+                <kbd>H</kbd>
+                <span class="sound">ride</span>
+            </div>
+            <div data-key="74" class="key">
+            <kbd>J</kbd>
+            <span class="sound">snare</span>
+            </div>
+            <div data-key="75" class="key">
+                <kbd>K</kbd>
+                <span class="sound">tom</span>
+            </div>
+            <div data-key="76" class="key">
+                <kbd>L</kbd>
+                <span class="sound">tink</span>
+            </div>
+        </div>
+
+        <audio data-key="65" src="DrumKit/sounds/clap.wav"></audio>
+        <audio data-key="83" src="DrumKit/sounds/hihat.wav"></audio>
+        <audio data-key="68" src="DrumKit/sounds/kick.wav"></audio>
+        <audio data-key="70" src="DrumKit/sounds/openhat.wav"></audio>
+        <audio data-key="71" src="DrumKit/sounds/boom.wav"></audio>
+        <audio data-key="72" src="DrumKit/sounds/ride.wav"></audio>
+        <audio data-key="74" src="DrumKit/sounds/snare.wav"></audio>
+        <audio data-key="75" src="DrumKit/sounds/tom.wav"></audio>
+        <audio data-key="76" src="DrumKit/sounds/tink.wav"></audio>
+
+
+        <script>
+
+
+        
+            window.addEventListener("keydown", function (e) {
+                const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+                const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+                // I am still not able to understand this two lines of codes 
+                // I may mely understand but no ability to use it yet
+
+                if(!audio) return;// This will stop the function from running all together
+                audio.currentTime = 0;//To make audio action constantly nad quickly
+                audio.play();//playing selected audio
+                
+                key.classList.add('playing');
+                // This line of codes mean add 'playing' css selector into key class
+                // so that css 'playing' selector could happen
+                
+            });
+
+            function removeTransition(e) {
+                if(e.propertyName !== 'transform') return;
+                //skip it if ti's not a transform
+                // console.log(this);
+                this.classList.remove("playing");
+                // This line of code is that remove transform 
+                //which is the action that happens when I push the buttons
+            }
+
+            const keys = document.querySelectorAll(".key"); //select .key selector
+            keys.forEach(key => key.addEventListener('transitionend',removeTransition));
+            //execute removeTransition() by transitionend event on key every single time 
+
+
+            
+
+
+
+
+
+       
+        
+        </script>
+
+    </body>
+</html>
