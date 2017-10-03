@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Scoped CSS Variables adn JS</title>
+  </head>
+  <body>
+
+    <h2>Update CSS Variables with <span class="hl">JS</span></h2>
+
+    <div class="controls">
+      <label for="spacing">Spacing:</label>
+      <input id="spacing" name="spacing" type="range" min="10" max="200"
+      value="10" data-sizing="px">
+      
+      <label for="blur">Blur:</label>
+      <input id="blur" name="blur" type="range" min="0" max="25"
+        value="10" data-sizing="px">
+      
+        <label for="base">Base Color</label>
+      <input id="base" type="color" name="base" value="#ffc600">
+    </div>
+
+    <img src="http://unsplash.it/800/500?image=899">
+    <style>
+      
+      :root {
+        --base: #FFc600;
+        --spacing: 10px;
+        --blur: 10px;
+      }
+
+      
+      img {
+        padding: var(--spacing);
+        background: var(--base);
+        filter: blur(var(--blur));
+      }
+
+      .hl{
+        color: var(--base)
+      }
+      
+      body {
+        text-align: center;
+      }
+
+      body {
+        background: #193549;
+        color: white;
+        font-family: 'helvetica neue', sans-serif;
+        font-weight: 100;
+        font-size: 50px;
+      }
+
+      .constrols {
+        margin-bottom: 50px;
+      }
+
+      input {
+        width: 100px;
+      }
+
+    </style>
+
+    <script>
+      const inputs = document.querySelectorAll('.controls input');
+        /*document.querySelectorAll('.controls input'); 
+        When I run this codes then javascript will return the NodeList 
+        Which is really simular to Array, it has a less method on it then the 
+        Array does though*/ 
+
+        function handleUpdate() {
+          console.log(this.dataset);
+          /*"dataset" is an object that all ready. we don't have to select it
+          and use attribute selectors from it it will just take*/
+        }
+
+        inputs.forEach(input => input.addEventListener('change',handleUpdate));
+        /*Inside of inputs variable, we can pass the value that initiated by event
+         the loop allows function to keep up the mutiful and events  */
+        inputs.forEach(input => input.addEventListener('mousemove',handleUpdate));
+        /* This line of codes allow user to innitiate value  by mousemove over the scrollers */ 
+        
+
+    </script>
+
+
+  </body>
+</html>
