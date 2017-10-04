@@ -8,6 +8,18 @@ It also noticeable that I am not able to understand all those codes, I am trying
 Each folder consists of different project and  functions, as Wes Bos is dealing different things in every lectures of his.
 Everything that built on this repository consist of HTML, CSS, Javascript.
 
+
+
+
+
+
+
+
+
+
+
+## 03 - CSS Variable 
+#### This project will allow you to control features of a picture by dragging scroller
 <p align="center">
-   <img src="https://user-images.githubusercontent.com/31529193/31154787-7aaa3ad8-a877-11e7-9398-d98031e950ab.png" width="350"/>
+   <img src="https://user-images.githubusercontent.com/31529193/31154787-7aaa3ad8-a877-11e7-9398-d98031e950ab.png" width="500"/>
    
