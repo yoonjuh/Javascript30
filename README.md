@@ -5,5 +5,5 @@ It also noticeable that I am not able to understand all those codes, I am trying
 
 ## Getting Started
 
-Each folder consists of different project and  function, as Wes Bos is dealing different thing in every lecture of his.
+Each folder consists of different project and  functions, as Wes Bos is dealing different things in every lectures of his.
 Everything that built on this repository consist of HTML, CSS, Javascript.
