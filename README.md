@@ -20,6 +20,5 @@ Everything that built on this repository consist of HTML, CSS, Javascript.
 
 ## 03 - CSS Variable 
 #### This project will allow you to control features of a picture by dragging scroller
-<p align="center">
-   <img src="https://user-images.githubusercontent.com/31529193/31154787-7aaa3ad8-a877-11e7-9398-d98031e950ab.png" width="500"/>
+![posts_index](https://user-images.githubusercontent.com/31529193/31154787-7aaa3ad8-a877-11e7-9398-d98031e950ab.png)
    
